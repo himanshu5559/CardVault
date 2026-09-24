@@ -124,9 +124,7 @@ void main() {
     test('maps unknown exception to UnknownBankError', () {
       const mapper = ErrorMapper();
 
-      final result = mapper.map(
-        Exception('unexpected error'),
-      );
+      final result = mapper.map(Exception('unexpected error'));
 
       expect(result, isA<UnknownBankError>());
     });

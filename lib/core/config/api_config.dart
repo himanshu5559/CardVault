@@ -3,6 +3,6 @@ class ApiConfig {
 
   static const baseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'https://api.cardvault.local',
+    defaultValue: 'http://localhost:3000',
   );
 }

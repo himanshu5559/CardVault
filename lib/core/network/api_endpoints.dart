@@ -15,8 +15,7 @@ class ApiEndpoints {
 
   static String cardCredit(String cardId) => '/cards/$cardId/credit';
 
-  static String cardStatements(String cardId) =>
-      '/cards/$cardId/statements';
+  static String cardStatements(String cardId) => '/cards/$cardId/statements';
 
   static String cardStatement(String cardId, String month) =>
       '/cards/$cardId/statements/$month';

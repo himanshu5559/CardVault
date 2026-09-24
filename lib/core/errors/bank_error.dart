@@ -3,11 +3,7 @@ sealed class BankError implements Exception {
   final String? code;
   final String? traceId;
 
-  const BankError({
-    required this.message,
-    this.code,
-    this.traceId,
-  });
+  const BankError({required this.message, this.code, this.traceId});
 }
 
 final class NetworkBankError extends BankError {

@@ -6,10 +6,7 @@ class ErrorInterceptor extends Interceptor {
   const ErrorInterceptor();
 
   @override
-  void onError(
-    DioException err,
-    ErrorInterceptorHandler handler,
-  ) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     if (err.response?.statusCode == 401) {
       handler.reject(
         DioException(
