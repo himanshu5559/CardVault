@@ -9,23 +9,22 @@ class ApiClient {
   final Dio dio;
   final AuthInterceptor authInterceptor;
 
-  ApiClient({
-    Dio? dio,
-    AuthInterceptor? authInterceptor,
-  })  : authInterceptor = authInterceptor ?? AuthInterceptor(),
-        dio = dio ??
-            Dio(
-              BaseOptions(
-                baseUrl: ApiConfig.baseUrl,
-                connectTimeout: const Duration(seconds: 10),
-                receiveTimeout: const Duration(seconds: 10),
-                sendTimeout: const Duration(seconds: 10),
-                headers: {
-                  'Content-Type': 'application/json',
-                  'Accept': 'application/json',
-                },
-              ),
-            ) {
+  ApiClient({Dio? dio, AuthInterceptor? authInterceptor})
+    : authInterceptor = authInterceptor ?? AuthInterceptor(),
+      dio =
+          dio ??
+          Dio(
+            BaseOptions(
+              baseUrl: ApiConfig.baseUrl,
+              connectTimeout: const Duration(seconds: 10),
+              receiveTimeout: const Duration(seconds: 10),
+              sendTimeout: const Duration(seconds: 10),
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+              },
+            ),
+          ) {
     this.dio.interceptors.addAll([
       this.authInterceptor,
       const LoggingInterceptor(),

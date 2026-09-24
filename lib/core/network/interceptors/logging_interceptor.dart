@@ -6,10 +6,7 @@ class LoggingInterceptor extends Interceptor {
   const LoggingInterceptor();
 
   @override
-  void onRequest(
-    RequestOptions options,
-    RequestInterceptorHandler handler,
-  ) {
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     developer.log(
       '[API REQUEST] ${options.method} ${options.path}',
       name: 'CardVault.API',
@@ -32,10 +29,7 @@ class LoggingInterceptor extends Interceptor {
   }
 
   @override
-  void onError(
-    DioException err,
-    ErrorInterceptorHandler handler,
-  ) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     developer.log(
       '[API ERROR] ${err.response?.statusCode ?? 'NO_STATUS'} '
       '${err.requestOptions.path}',

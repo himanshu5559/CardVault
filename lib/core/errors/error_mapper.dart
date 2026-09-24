@@ -30,9 +30,7 @@ class ErrorMapper {
         return _mapStatusCode(error.response);
 
       case DioExceptionType.cancel:
-        return const UnknownBankError(
-          message: 'The request was cancelled.',
-        );
+        return const UnknownBankError(message: 'The request was cancelled.');
 
       case DioExceptionType.badCertificate:
         return const NetworkBankError(
